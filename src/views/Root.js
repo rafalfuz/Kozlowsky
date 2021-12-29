@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Toggler from "../components/atoms/Toggler";
+import Logo from "../components/atoms/logo";
+import Navbar from "../components/molecules/Navbar/Navbar";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../theme/themes";
-import ContentPageTest from "./ContentPageTest";
-import ContentPageTest2 from "./ContentPageTest2";
 import GlobalStyle from "../theme/globalTheme";
 
 const Root = () => {
@@ -13,8 +13,8 @@ const Root = () => {
       <GlobalStyle />
       <ThemeProvider theme={themes[theme]}>
         <Toggler theme={theme} setTheme={setTheme} />
-        <ContentPageTest />
-        <ContentPageTest2 />
+        <Logo />
+        <Navbar />
       </ThemeProvider>
     </>
   );
