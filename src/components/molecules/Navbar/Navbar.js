@@ -1,52 +1,79 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { NavLink } from "react-router-dom";
+import Logo from '../../atoms/logo'
 
-const StyledNavbar = styled.div`
+const StyledNavbarWrapper = styled.nav`
   height: 60px;
-  width: 100%;
+  display: flex;  
   background-color: ${(props) => props.theme.pageBackground};
   color: ${(props) => props.theme.textColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const StyledNavLinkWrapper = styled.ul`
-  list-style: none;
-`;
+    ${props => props.mobileNavActive && css`
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 100vh;
+`}
+`
+
+const StyledNavbar = styled.ul`
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+        @media screen and (max-width: 960px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        left: ${(props)=>props.mobileNavActive ? 0 : '-100%'};
+        background-color:  #282c36;
+        transition: all .5s ease;
+        overflow: hidden;
+        color: red;
+        }
+`
 
 const StyledNavLink = styled(NavLink)`
-  margin: 0 5px;
-`;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 9999;
+    color: ${(props) => props.theme.textColor};
+    &.active{
+        color: white;
+    }
+`
 
-const StyledMobileNavWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: royalblue;
-`;
+const StyledLogo = styled.div`
+    display: ${(props)=>props.mobileNavActive ? 'block' : 'none'}
+`
+
+const StyledRemoveMenu = styled.p`
+    font-size: 80px
+    color: white;
+    font-weight: 800;
+`
 
 const Navbar = () => {
   const [mobileActive, setMobileActive] = useState(false);
 
-  const handleMobileActive = (mobileActive) => {
-    setMobileActive(!mobileActive);
-    console.log(mobileActive);
-  };
-
-  const removeMobileActive = (mobileActive) => {
-    setMobileActive(false);
-  };
   return (
     <>
-      <button onClick={() => handleMobileActive(mobileActive)}>Handler</button>
-      <button onClick={() => removeMobileActive(mobileActive)}>Remover</button>
-      <StyledNavbar>
-        <StyledNavLinkWrapper>
-          <StyledNavLink to="/link1">ITEM</StyledNavLink>
-          <StyledNavLink to="/link1">ITEM</StyledNavLink>
-          <StyledNavLink to="/link1">ITEM</StyledNavLink>
-        </StyledNavLinkWrapper>
-      </StyledNavbar>
+          <StyledNavbarWrapper mobileNavActive={mobileActive}>
+            <StyledNavbar>
+              <StyledLogo mobileNavActive={mobileActive}><Logo/></StyledLogo>
+          <StyledNavLink to="/">ITEM</StyledNavLink>
+          <StyledNavLink to="/">ITEM</StyledNavLink>
+          <StyledNavLink to="/">ITEM</StyledNavLink>
+            {mobileActive && <StyledRemoveMenu>X</StyledRemoveMenu>}
+            </StyledNavbar>
+          </StyledNavbarWrapper>
     </>
   );
 };
