@@ -1,148 +1,54 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { Link, NavLink } from "react-router-dom";
-import { MdMenu, MdClose } from "react-icons/md";
+import { useState } from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-const StyledNavbarWrapper = styled.nav`
-  height: 80px;
-  display: flex;
-  ${(props) =>
-    props.mobileNavActive &&
-    css`
-      position: fixed;
-      width: 100vw;
-    `}
-`;
-
-const StyledNavbar = styled.ul`
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: space-between;
-`;
-
-const StyledNavLogo = styled(Link)`
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 2.4rem;
-  display: flex;
-  color: cornsilk;
-`;
-
-const StyledCorpName = styled.h1`
-  text-transform: uppercase;
-`;
-
-const MobileIcon = styled.div`
-  display: none;
-  @media screen and (max-width: 960px) {
-    display: block;
-    position: absolute;
-    top: 0px;
-    right: 0;
-    transform: translate(-100%, 60%);
-    cursor: pointer;
-    font-size: 3rem;
-  }
-`;
-
-const StyledNavMenu = styled.ul`
-  list-style-type: none;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-around;
-  @media screen and (max-width: 960px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 80px);
-    position: fixed;
-    top: 80px;
-    left: ${({ mobile }) => (mobile ? 0 : "-100%")};
-    background-color: #ffcff1;
-    transition: all 0.5s ease;
-    overflow: hidden;
-  }
-`;
-const StyledItem = styled.li`
-  border-bottom: 2px solid transparent;
-  &:hover {
-    border-bottom: 2px solid #ff1493;
-    transition: all 0.5s ease;
-  }
-
-  @media screen and (max-width: 960px) {
-    width: 100%;
-    &:hover {
-      border-bottom: 2px solid transparent;
-    }
-  }
-`;
-
-const StyledNavLink = styled(NavLink)`
+const StyledNavbar = styled.div`
+  height: 60px;
+  width: 100%;
+  background-color: ${(props) => props.theme.pageBackground};
+  color: ${(props) => props.theme.textColor};
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 2.4rem;
-  color: cornsilk;
-  z-index: 9999;
-  &.active {
-    font-weight: 600;
-    font-size: 2.5rem;
-  }
 `;
-class Navbar extends React.Component {
-  state = {
-    mobileActive: false,
+const StyledNavLinkWrapper = styled.ul`
+  list-style: none;
+`;
+
+const StyledNavLink = styled(NavLink)`
+  margin: 0 5px;
+`;
+
+const StyledMobileNavWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: royalblue;
+`;
+
+const Navbar = () => {
+  const [mobileActive, setMobileActive] = useState(false);
+
+  const handleMobileActive = (mobileActive) => {
+    setMobileActive(!mobileActive);
+    console.log(mobileActive);
   };
 
-  handleMobileActive = () =>
-    this.setState((prevState) => ({ mobileActive: !prevState.mobileActive }));
-
-  removeMenuMobile = () =>
-    this.setState({
-      mobileActive: false,
-    });
-
-  render() {
-    const { mobileActive } = this.state;
-
-    return (
-      <StyledNavbarWrapper mobileNavActive={mobileActive && true}>
-        <StyledNavbar>
-          <StyledNavLogo to="/" onClick={this.removeMenuMobile}>
-            <StyledCorpName>MISTA</StyledCorpName>
-          </StyledNavLogo>
-
-          <MobileIcon onClick={() => this.handleMobileActive({ mobileActive })}>
-            {mobileActive ? <MdClose /> : <MdMenu />}
-          </MobileIcon>
-          {mobileActive ? (
-            <StyledNavMenu mobile>
-              <StyledItem mobile onClick={this.removeMenuMobile}>
-                <StyledNavLink as={NavLink} to="/">
-                  Home
-                </StyledNavLink>
-              </StyledItem>
-            </StyledNavMenu>
-          ) : (
-            <StyledNavMenu>
-              <StyledItem>
-                <StyledNavLink as={NavLink} to="/home" activeclass="active">
-                  Home
-                </StyledNavLink>
-              </StyledItem>
-            </StyledNavMenu>
-          )}
-        </StyledNavbar>
-      </StyledNavbarWrapper>
-    );
-  }
-}
+  const removeMobileActive = (mobileActive) => {
+    setMobileActive(false);
+  };
+  return (
+    <>
+      <button onClick={() => handleMobileActive(mobileActive)}>Handler</button>
+      <button onClick={() => removeMobileActive(mobileActive)}>Remover</button>
+      <StyledNavbar>
+        <StyledNavLinkWrapper>
+          <StyledNavLink to="/link1">ITEM</StyledNavLink>
+          <StyledNavLink to="/link1">ITEM</StyledNavLink>
+          <StyledNavLink to="/link1">ITEM</StyledNavLink>
+        </StyledNavLinkWrapper>
+      </StyledNavbar>
+    </>
+  );
+};
 
 export default Navbar;
