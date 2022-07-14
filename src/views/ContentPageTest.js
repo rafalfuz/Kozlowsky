@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import GeneralTemplate from "../components/templates/GeneralTemplate";
 
 const StyledTitle = styled.h1`
   text-align: center;
@@ -14,7 +13,7 @@ const StyledContent = styled.div`
 `;
 
 const ContentPageTest = () => (
-  <GeneralTemplate>
+  <>
     <StyledTitle>Taboriosam rem sunt</StyledTitle>
     <StyledContent>
       <p>
@@ -54,7 +53,7 @@ const ContentPageTest = () => (
         dignissimos facere excepturi voluptatem?
       </p>
     </StyledContent>
-  </GeneralTemplate>
+  </>
 );
 
 export default ContentPageTest;
