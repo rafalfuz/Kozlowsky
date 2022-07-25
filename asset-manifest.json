@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Remake-of-mi-sta.pl-website/static/css/main.a89562f5.css",
+    "main.js": "/Remake-of-mi-sta.pl-website/static/js/main.408843d6.js",
+    "static/media/banner8.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner8.7830ca54c916b427bca6.jpg",
+    "static/media/banner4.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner4.abbdbec164ebb764d1f5.jpg",
+    "static/media/banner9.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner9.c7e59cddb5effb9250e3.jpg",
+    "static/media/banner6.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner6.aa565893d63e27294045.jpg",
+    "static/media/banner5.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner5.63ac90c0ebd20babd552.jpg",
+    "static/media/banner2.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner2.d7a78c1e18884a358606.jpg",
+    "static/media/banner7.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner7.2b297aefc44a9156ed85.jpg",
+    "static/media/banner3.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner3.5f6c7a7337c844254bc6.jpg",
+    "static/media/Jeweler.jpg": "/Remake-of-mi-sta.pl-website/static/media/Jeweler.6ee466f32570e123a565.jpg",
+    "static/media/banner1.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner1.0bb9b32a95bf46754102.jpg",
+    "static/media/silverCreator.jpg": "/Remake-of-mi-sta.pl-website/static/media/silverCreator.f8b452bd40c6a0558103.jpg",
+    "static/media/Ring.jpg": "/Remake-of-mi-sta.pl-website/static/media/Ring.13da2203195bc404f728.jpg",
+    "static/media/Silver.jpg": "/Remake-of-mi-sta.pl-website/static/media/Silver.df9c8cf4bbf0b7fd7266.jpg",
+    "static/media/logo_m.png": "/Remake-of-mi-sta.pl-website/static/media/logo_m.b70e2f25ef4b57384c9e.png",
+    "index.html": "/Remake-of-mi-sta.pl-website/index.html",
+    "main.a89562f5.css.map": "/Remake-of-mi-sta.pl-website/static/css/main.a89562f5.css.map",
+    "main.408843d6.js.map": "/Remake-of-mi-sta.pl-website/static/js/main.408843d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a89562f5.css",
+    "static/js/main.408843d6.js"
+  ]
+}
