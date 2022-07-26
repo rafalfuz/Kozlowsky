@@ -14,7 +14,7 @@ import ContentPageTest2 from "./ContentPageTest2";
 const Root = () => {
   const [theme, setTheme] = useState("dark");
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <GlobalStyle />
       <ThemeProvider theme={themes[theme]}>
         <ModalProvider>
