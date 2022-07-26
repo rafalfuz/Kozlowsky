@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Remake-of-mi-sta.pl-website/static/css/main.a89562f5.css",
-    "main.js": "/Remake-of-mi-sta.pl-website/static/js/main.408843d6.js",
+    "main.js": "/Remake-of-mi-sta.pl-website/static/js/main.00c094d9.js",
     "static/media/banner8.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner8.7830ca54c916b427bca6.jpg",
     "static/media/banner4.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner4.abbdbec164ebb764d1f5.jpg",
     "static/media/banner9.jpg": "/Remake-of-mi-sta.pl-website/static/media/banner9.c7e59cddb5effb9250e3.jpg",
@@ -18,10 +18,10 @@
     "static/media/logo_m.png": "/Remake-of-mi-sta.pl-website/static/media/logo_m.b70e2f25ef4b57384c9e.png",
     "index.html": "/Remake-of-mi-sta.pl-website/index.html",
     "main.a89562f5.css.map": "/Remake-of-mi-sta.pl-website/static/css/main.a89562f5.css.map",
-    "main.408843d6.js.map": "/Remake-of-mi-sta.pl-website/static/js/main.408843d6.js.map"
+    "main.00c094d9.js.map": "/Remake-of-mi-sta.pl-website/static/js/main.00c094d9.js.map"
   },
   "entrypoints": [
     "static/css/main.a89562f5.css",
-    "static/js/main.408843d6.js"
+    "static/js/main.00c094d9.js"
   ]
 }
